@@ -53,11 +53,11 @@
   <ItemGroup>
     <Reference Include="DCI_Elements, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Interface\DCI_Elements.dll</HintPath>
+      <HintPath>Interface\DCI_Elements.dll</HintPath>
     </Reference>
     <Reference Include="MetadataExtractor, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Interface\MetadataExtractor.dll</HintPath>
+      <HintPath>Interface\MetadataExtractor.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -73,7 +73,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="XperiCode.JpegMetadata, Version=0.9.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Interface\XperiCode.JpegMetadata.dll</HintPath>
+      <HintPath>Interface\XperiCode.JpegMetadata.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
