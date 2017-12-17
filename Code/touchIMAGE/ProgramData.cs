@@ -1,7 +1,6 @@
 ﻿// Davide Carboni et Julien richoz
 // Main data of programm
 // Cretated: 13.12.2017
-// Modifiy:
 // v.1.0
 
 
