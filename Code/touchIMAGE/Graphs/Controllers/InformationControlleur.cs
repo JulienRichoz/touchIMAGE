@@ -31,6 +31,8 @@ namespace touchIMAGE.Graphs.Controllers
             else
             {
                 Program.MainForm.pnl_information_container.DisableButtonsMetaData();
+                if (Program.MainForm.pnl_information_container.pnl_information_modify.Animation.Is_Opened)
+                    Program.MainForm.pnl_information_container.pnl_information_modify.Animation.ClosePanel();
             }
         }
 
