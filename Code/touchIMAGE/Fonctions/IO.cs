@@ -52,7 +52,8 @@ namespace touchIMAGE.Fonctions
                 {
                     foreach (string tag in metadata.Tags)
                         if (Array.Exists(Tags, element => element == tag))
-                            newListFiles.Add(file);
+                            if (!newListFiles.Contains(file))
+                                newListFiles.Add(file);
                 }
                 else
                     newListFiles.Add(file);
@@ -105,11 +106,13 @@ namespace touchIMAGE.Fonctions
                             if (metadata.Date != "") // no date available (not jpeg)
                             {
                                 if (DateCompare(Convert.ToDateTime(metadata.Date), Date))
-                                    newListFiles.Add(file);
+                                    if (!newListFiles.Contains(file))
+                                        newListFiles.Add(file);
                             }
                             else
                             {
-                                newListFiles.Add(file);
+                                if (!newListFiles.Contains(file))
+                                        newListFiles.Add(file);
                             }
                 }
                 else
@@ -147,11 +150,13 @@ namespace touchIMAGE.Fonctions
                             if (metadata.Date != "") // no date available 
                             {
                                 if ((DateCompare(Convert.ToDateTime(metadata.Date), DateStart)) && (!DateCompare(Convert.ToDateTime(metadata.Date), DateEnd)))
-                                    newListFiles.Add(file);
+                                    if (!newListFiles.Contains(file))
+                                        newListFiles.Add(file);
                             }
                             else
                             {
-                                newListFiles.Add(file);
+                                if (!newListFiles.Contains(file))
+                                    newListFiles.Add(file);
                             }
                 }
                 else
@@ -276,7 +281,8 @@ namespace touchIMAGE.Fonctions
 
                     foreach (string tag in metadata.Tags)
                         if ((Array.Exists(Tags, element => element == tag)) && (metadata.Favorite))
-                            newListFiles.Add(file);
+                            if (!newListFiles.Contains(file))
+                                newListFiles.Add(file);
                 }
                 else
                     newListFiles.Add(file);
@@ -430,12 +436,14 @@ namespace touchIMAGE.Fonctions
                             if (metadata.Date != "") // no date available
                             {
                                 if ((DateCompare(Convert.ToDateTime(metadata.Date), Date)) && (metadata.Favorite))
-                                    newListFiles.Add(file);
+                                    if (!newListFiles.Contains(file))
+                                        newListFiles.Add(file);
                             }
                             else
                             {
                                 if (metadata.Favorite)
-                                    newListFiles.Add(file);
+                                    if (!newListFiles.Contains(file))
+                                        newListFiles.Add(file);
                             }
                         }
                     }
