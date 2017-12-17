@@ -98,16 +98,16 @@ namespace touchIMAGE.Graphs.Panels.Navigation
 
         private void cmd_Favorite_Click(object sender, EventArgs e)
         {
-            if (ProgramData.filtreFavorite)
+            if (ProgramData.filter_Favorite)
             {
                 cmd_Favorite.BackgroundImage = Properties.Resources.add_favorite;
-                ProgramData.filtreFavorite = false;
+                ProgramData.filter_Favorite = false;
             }
             else
             {
 
                 cmd_Favorite.BackgroundImage = Properties.Resources.del_favorite;
-                ProgramData.filtreFavorite = true;
+                ProgramData.filter_Favorite = true;
             }
 
             touchIMAGE.Graphs.Controllers.NavigationFolderController.RefershImageListAndHeader();

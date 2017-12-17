@@ -90,7 +90,7 @@ namespace touchIMAGE.Graphs.Panels.Navigation
             foreach (string value in lst_Selected.Items)
                 tags.Add(value);
 
-            ProgramData.filtre_Tag =  tags.ToArray();
+            ProgramData.filter_Tag =  tags.ToArray();
             Program.MainForm.RefreshImageList();
         }
 

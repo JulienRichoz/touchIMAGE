@@ -46,7 +46,7 @@ namespace touchIMAGE.Graphs.Panels.Navigation
             else
                 dates = null;
 
-            ProgramData.filtre_Date = dates;
+            ProgramData.filter_Date = dates;
 
             Program.MainForm.RefreshImageList();
         }

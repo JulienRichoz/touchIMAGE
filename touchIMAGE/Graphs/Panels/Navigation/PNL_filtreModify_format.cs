@@ -53,7 +53,7 @@ namespace touchIMAGE.Graphs.Panels.Navigation
 
         private void FillList()
         {
-            foreach (string f in ProgramData.filtre_Format)
+            foreach (string f in ProgramData.filter_Format)
             {
                 lst_Selected.Items.Add(f.Substring(2));
             }
@@ -70,7 +70,7 @@ namespace touchIMAGE.Graphs.Panels.Navigation
             foreach (string f in lst_Selected.Items)
                 formats.Add("*." + f);
 
-            ProgramData.filtre_Format =  formats.ToArray();
+            ProgramData.filter_Format =  formats.ToArray();
             Program.MainForm.RefreshImageList();
         }
 

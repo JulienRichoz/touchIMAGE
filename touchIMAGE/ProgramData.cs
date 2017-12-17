@@ -27,10 +27,10 @@ namespace touchIMAGE
     public class ProgramData
     {
         public static string rootFolder = Settings.Default.RootPath;
-        public static string[] filtre_Format = new[] { "*.jpg", "*.png", "*.gif", "*.bmp" };
-        public static string[] filtre_Tag = new string[0];
-        public static FiltreDate filtre_Date = null;
-        public static Boolean filtreFavorite = false;
+        public static string[] filter_Format = new[] { "*.jpg", "*.png", "*.gif", "*.bmp" };
+        public static string[] filter_Tag = new string[0];
+        public static FiltreDate filter_Date = null;
+        public static Boolean filter_Favorite = false;
         public static string SelectedFolder;
         public static FileData SelectedFile;
     }
@@ -55,50 +55,50 @@ namespace touchIMAGE
         {
             // get the files with the selected filter
 
-            if (filtreFavorite)
+            if (filter_Favorite)
             {
-                if (filtre_Date == null)
+                if (filter_Date == null)
                 {
-                    if (filtre_Tag.Length == 0)
-                        this._files = touchIMAGE.Fonctions.IO.getFiles(FolderFullName, filtre_Format, filtreFavorite);
+                    if (filter_Tag.Length == 0)
+                        this._files = touchIMAGE.Fonctions.IO.getFiles(FolderFullName, filter_Format, filter_Favorite);
                     else
-                        this._files = touchIMAGE.Fonctions.IO.getFiles(this.FolderFullName, filtre_Format, filtreFavorite, filtre_Tag);
+                        this._files = touchIMAGE.Fonctions.IO.getFiles(this.FolderFullName, filter_Format, filter_Favorite, filter_Tag);
                 }
                 else
                 {
-                    if (!filtre_Date.IsRange)
-                        if (filtre_Tag.Length == 0)
-                            this._files = touchIMAGE.Fonctions.IO.getFiles(this.FolderFullName, filtre_Format, filtreFavorite, filtre_Date.Date_Start);
+                    if (!filter_Date.IsRange)
+                        if (filter_Tag.Length == 0)
+                            this._files = touchIMAGE.Fonctions.IO.getFiles(this.FolderFullName, filter_Format, filter_Favorite, filter_Date.Date_Start);
                         else
-                            this._files = touchIMAGE.Fonctions.IO.getFiles(this.FolderFullName, filtre_Format, filtreFavorite, filtre_Date.Date_Start, filtre_Tag);
+                            this._files = touchIMAGE.Fonctions.IO.getFiles(this.FolderFullName, filter_Format, filter_Favorite, filter_Date.Date_Start, filter_Tag);
                     else
-                        if (filtre_Tag.Length == 0)
-                            this._files = touchIMAGE.Fonctions.IO.getFiles(this.FolderFullName, filtre_Format, filtreFavorite, filtre_Date.Date_Start, filtre_Date.Date_End);
+                        if (filter_Tag.Length == 0)
+                            this._files = touchIMAGE.Fonctions.IO.getFiles(this.FolderFullName, filter_Format, filter_Favorite, filter_Date.Date_Start, filter_Date.Date_End);
                     else
-                        this._files = touchIMAGE.Fonctions.IO.getFiles(this.FolderFullName, filtre_Format, filtreFavorite, filtre_Date.Date_Start, filtre_Date.Date_End, filtre_Tag);
+                        this._files = touchIMAGE.Fonctions.IO.getFiles(this.FolderFullName, filter_Format, filter_Favorite, filter_Date.Date_Start, filter_Date.Date_End, filter_Tag);
                 }
             }
             else
             {
-                if (filtre_Date == null)
+                if (filter_Date == null)
                 {
-                    if (filtre_Tag.Length == 0)
-                        this._files = touchIMAGE.Fonctions.IO.getFiles(this.FolderFullName, filtre_Format);
+                    if (filter_Tag.Length == 0)
+                        this._files = touchIMAGE.Fonctions.IO.getFiles(this.FolderFullName, filter_Format);
                     else
-                        this._files = touchIMAGE.Fonctions.IO.getFiles(this.FolderFullName, filtre_Format, filtre_Tag);
+                        this._files = touchIMAGE.Fonctions.IO.getFiles(this.FolderFullName, filter_Format, filter_Tag);
                 }
                 else
                 {
-                    if (!filtre_Date.IsRange)
-                        if (filtre_Tag.Length == 0)
-                            this._files = touchIMAGE.Fonctions.IO.getFiles(this.FolderFullName, filtre_Format, filtre_Date.Date_Start);
+                    if (!filter_Date.IsRange)
+                        if (filter_Tag.Length == 0)
+                            this._files = touchIMAGE.Fonctions.IO.getFiles(this.FolderFullName, filter_Format, filter_Date.Date_Start);
                         else
-                            this._files = touchIMAGE.Fonctions.IO.getFiles(this.FolderFullName, filtre_Format, filtre_Tag, filtre_Date.Date_Start);
+                            this._files = touchIMAGE.Fonctions.IO.getFiles(this.FolderFullName, filter_Format, filter_Tag, filter_Date.Date_Start);
                     else
-                       if (filtre_Tag.Length == 0)
-                        this._files = touchIMAGE.Fonctions.IO.getFiles(this.FolderFullName, filtre_Format, filtre_Date.Date_Start, filtre_Date.Date_End);
+                       if (filter_Tag.Length == 0)
+                        this._files = touchIMAGE.Fonctions.IO.getFiles(this.FolderFullName, filter_Format, filter_Date.Date_Start, filter_Date.Date_End);
                     else
-                        this._files = touchIMAGE.Fonctions.IO.getFiles(this.FolderFullName, filtre_Format, filtre_Tag, filtre_Date.Date_Start, filtre_Date.Date_End);
+                        this._files = touchIMAGE.Fonctions.IO.getFiles(this.FolderFullName, filter_Format, filter_Tag, filter_Date.Date_Start, filter_Date.Date_End);
                 }
             }
             
