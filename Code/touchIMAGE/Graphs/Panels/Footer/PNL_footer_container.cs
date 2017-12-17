@@ -54,7 +54,8 @@ namespace touchIMAGE.Graphs.Panels.Footer
             touchIMAGE.Graphs.Controllers.ListViewImageController.ListSizeWith = Width;
             touchIMAGE.Graphs.Controllers.ListViewImageController.ListSizeHeight = Height;
 
-            touchIMAGE.Graphs.Controllers.NavigationFolderController.RefershImageListAndHeader();
+            if ( (Width % 25) == 0)
+                touchIMAGE.Graphs.Controllers.NavigationFolderController.RefershImageListAndHeader();
         }
     }
 }

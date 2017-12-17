@@ -153,7 +153,7 @@ namespace touchIMAGE.Graphs.Controllers
         private static void FillListViewBK()
         {
             th = new Thread(Fill);
-            th.Priority = ThreadPriority.Highest;
+            //th.Priority = ThreadPriority.Highest;
             th.Start();
             return;
         }

@@ -91,6 +91,7 @@
             this.trk_ImageSize.Size = new System.Drawing.Size(104, 45);
             this.trk_ImageSize.SmallChange = 50;
             this.trk_ImageSize.TabIndex = 5;
+            this.trk_ImageSize.TickFrequency = 50;
             this.trk_ImageSize.Value = 120;
             this.trk_ImageSize.Scroll += new System.EventHandler(this.trk_ImageSize_Scroll);
             // 
