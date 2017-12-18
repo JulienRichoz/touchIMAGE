@@ -150,14 +150,21 @@ namespace touchIMAGE.Fonctions
         /// </summary>
         /// <param name="NewDate"></param>
 
-        public void WriteDate(string NewDate)
+        public void WriteDate(DateTime NewDate)
         {
+            string DataFormat = NewDate.ToString().Substring(2, 1);
+
+            DateTime time = NewDate;                  // Use current data.
+            string format = "MM" + DataFormat + "dd" + DataFormat + "yyyy HH:mm:ss";   // Use this format.
+
+            string date = NewDate.ToString(format);
+
             try
             {
                 var adapter = new JpegMetadataAdapter(@fileName);
-                adapter.Metadata.DateTaken = NewDate;
+                adapter.Metadata.DateTaken = date;
                 adapter.Save();
-                Date = NewDate;
+                Date = NewDate.ToString();
             }
             catch
             {

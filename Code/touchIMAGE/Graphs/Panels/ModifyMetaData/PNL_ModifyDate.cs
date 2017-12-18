@@ -43,7 +43,7 @@ namespace touchIMAGE.Graphs.Panels.ModifyMetaData
 
         private void cmd_Modify_Click(object sender, EventArgs e)
         {
-            ProgramData.SelectedFile.FileMetaData.WriteDate (dta_DateTaken.Value.ToString());
+            ProgramData.SelectedFile.FileMetaData.WriteDate (dta_DateTaken.Value);
             ReadAndFill();
         }
 
