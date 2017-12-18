@@ -64,7 +64,7 @@ namespace touchIMAGE.Graphs.Panels.Navigation
 
         private string ItemFiltre(string value)
         {
-            return Regex.Replace(value, "[^a-zA-Z]+", "");
+            return Regex.Replace(value, "\r\n", "");
         }
 
         private void AddItems()

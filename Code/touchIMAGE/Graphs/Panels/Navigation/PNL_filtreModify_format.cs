@@ -105,9 +105,9 @@ namespace touchIMAGE.Graphs.Panels.Navigation
 
         private void AddItems()
         {
-            if (!ItemVerify(ItemFiltre(txt_Value.Text))) // Verify with the regEx
+            if (!ItemVerify(ItemFiltre(txt_Value.Text.ToLower()))) // Verify with the regEx
             {
-                lst_Selected.Items.Add(ItemFiltre(txt_Value.Text));
+                lst_Selected.Items.Add(ItemFiltre(txt_Value.Text).ToLower());
                 RefreshViewImages();
             }
             txt_Value.Text = "";

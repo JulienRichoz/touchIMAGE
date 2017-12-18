@@ -95,7 +95,7 @@ namespace touchIMAGE.Graphs.Panels.ModifyMetaData
 
         private string ItemFiltre(string value)
         {
-            return Regex.Replace(value, "[^a-zA-Z]+", "");
+            return Regex.Replace(value, "\r\n", "");
         }
 
         // Read the tags in the selected file and fill the control
