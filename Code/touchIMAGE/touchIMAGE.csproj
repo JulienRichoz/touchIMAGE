@@ -73,7 +73,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="XperiCode.JpegMetadata, Version=0.9.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>Interface\XperiCode.JpegMetadata.dll</HintPath>
+      <HintPath>..\..\..\..\..\OneDrive\Ecole\1_Trim\MAW1.1\Logiciel\Interface\XperiCode.JpegMetadata.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
