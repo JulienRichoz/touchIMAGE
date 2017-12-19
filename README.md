@@ -13,5 +13,5 @@ More information in full documentation (french).
 Davide Carboni and Julien Richoz
 ## System requirements
 Framework 4.5.2
-## Install
+## Installation
 Download folder Executable and run touchIMAGE.exe
