@@ -8,7 +8,7 @@ Main functions:
 + Rename automatically JPG files
 + Filter by metadata
 
-More information in full documentation (french).
+More information in documentation (french).
 ## Author
 Davide Carboni and Julien Richoz
 ## System requirements
