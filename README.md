@@ -1,7 +1,7 @@
 # touchIMAGE
 Photo viewer software developed in C#. Format supported: JPG, PNG, BMP, GIF, TIFF.
 
-Main functions
+Main functions:
 + List pictures
 + Read Metadata
 + Write JPG Metadata
