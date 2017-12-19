@@ -116,8 +116,8 @@ namespace touchIMAGE.Graphs.Controllers
             StopThread();                    // Stop the execution of the thread
             ClearList();                     // Clear the current List  
             Preview();                      // Fil the listView with the icon empty image           
-            //FillListViewBK();      // Fill the ListView with the real images in background 
-            Fill(new object());
+            FillListViewBK();      // Fill the ListView with the real images in background 
+            //Fill(new object());
             return;
         }
 
