@@ -109,10 +109,19 @@ namespace touchIMAGE.Graphs.Controllers
         /// <param name="FolderData"></param>
 
         public static void Populate(FolderData FolderData)
-        {
-            Program.MainForm.pnl_header_container.lnk_FilesRename.Enabled = false; // Disable FileRename in Header
-            Program.MainForm.pnl_footer_container.trk_ImageSize.Enabled = false; // Disable Change Size Image in Footer
-            FolderData.GetFiles();
+        {            
+            FolderData.GetFiles(); // Get Files
+            if (FolderData.FilesCount != 0)
+            {
+                Program.MainForm.pnl_header_container.lnk_FilesRename.Enabled = true;  // Enable File Rename function in Header
+                Program.MainForm.pnl_footer_container.trk_ImageSize.Enabled = true; // Enable Image size change in footer
+            }
+            else
+            {
+                Program.MainForm.pnl_header_container.lnk_FilesRename.Enabled = false; // Disable FileRename in Header
+                Program.MainForm.pnl_footer_container.trk_ImageSize.Enabled = false; // Disable Change Size Image in Footer
+            }
+
             files = FolderData.Files;         // The list of files
             StopThread();                    // Stop the execution of the thread
             ClearList();                     // Clear the current List  
@@ -204,11 +213,7 @@ namespace touchIMAGE.Graphs.Controllers
                 touchIMAGE.Program.MainForm.lst_Images.EndUpdate();// Restart the screen update
                 touchIMAGE.Program.MainForm.lst_Images.Refresh();// Refresh the listview in to the screen
             }
-            if (files.Length != 0)
-            {
-                Program.MainForm.pnl_header_container.lnk_FilesRename.Enabled = true;  // Enable File Rename function in Header
-                Program.MainForm.pnl_footer_container.trk_ImageSize.Enabled = true; // Enable Image size change in footer
-            }
+            
             return;
         }
     }
