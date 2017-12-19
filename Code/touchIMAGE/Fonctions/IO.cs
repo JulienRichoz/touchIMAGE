@@ -28,7 +28,16 @@ namespace touchIMAGE.Fonctions
 
         public static string[] getFiles(string FolderPath, string[] Format)
         {
-            return  Format.SelectMany(f => Directory.GetFiles(FolderPath, f)).ToArray();
+            string[] filesIMages = Format.SelectMany(f => Directory.GetFiles(FolderPath, f)).ToArray();
+            List<string> newListFiles = new List<string>();
+            foreach (string file in filesIMages)
+            {
+                if (IsImageFile(file))
+                    if (!newListFiles.Contains(file))
+                        newListFiles.Add(file);
+            }
+
+            return newListFiles.ToArray();
         }
 
         /// <summary>
@@ -41,7 +50,7 @@ namespace touchIMAGE.Fonctions
 
         public static string[] getFiles(string FolderPath, string[] Format, string[] Tags)
         {
-            string[] filesToSearch = Format.SelectMany(f => Directory.GetFiles(FolderPath, f)).ToArray();
+            string[] filesToSearch = getFiles(FolderPath, Format);
             List<string> newListFiles = new List<string>();
 
             foreach (string file in filesToSearch)
@@ -92,7 +101,7 @@ namespace touchIMAGE.Fonctions
 
         public static string[] getFiles(string FolderPath, string[] Format, string[] Tags,  DateTime Date)
         {
-            string[] filesToSearch = Format.SelectMany(f => Directory.GetFiles(FolderPath, f)).ToArray();
+            string[] filesToSearch = getFiles(FolderPath, Format);
             List<string> newListFiles = new List<string>();
 
             foreach (string file in filesToSearch)
@@ -135,7 +144,7 @@ namespace touchIMAGE.Fonctions
 
         public static string[] getFiles(string FolderPath, string[] Format, string[] Tags, DateTime DateStart, DateTime DateEnd)
         {
-            string[] filesToSearch = Format.SelectMany(f => Directory.GetFiles(FolderPath, f)).ToArray();
+            string[] filesToSearch = getFiles(FolderPath, Format);
             List<string> newListFiles = new List<string>();
 
             foreach (string file in filesToSearch)
@@ -178,7 +187,7 @@ namespace touchIMAGE.Fonctions
 
         public static string[] getFiles(string FolderPath, string[] Format, DateTime Date)
         {
-            string[] filesToSearch = Format.SelectMany(f => Directory.GetFiles(FolderPath, f)).ToArray();
+            string[] filesToSearch = getFiles(FolderPath, Format);
             List<string> newListFiles = new List<string>();
 
             foreach (string file in filesToSearch)
@@ -213,7 +222,7 @@ namespace touchIMAGE.Fonctions
 
         public static string[] getFiles(string FolderPath, string[] Format, DateTime DateStart, DateTime DateEnd)
         {
-            string[] filesToSearch = Format.SelectMany(f => Directory.GetFiles(FolderPath, f)).ToArray();
+            string[] filesToSearch = getFiles(FolderPath, Format);
             List<string> newListFiles = new List<string>();
 
             foreach (string file in filesToSearch)
@@ -245,7 +254,7 @@ namespace touchIMAGE.Fonctions
 
         public static string[] getFiles(string FolderPath, string[] Format, Boolean Favorite)
         {
-            string[] filesToSearch = Format.SelectMany(f => Directory.GetFiles(FolderPath, f)).ToArray();
+            string[] filesToSearch = getFiles(FolderPath, Format);
             List<string> newListFiles = new List<string>();
             
             foreach (string file in filesToSearch)
@@ -269,7 +278,7 @@ namespace touchIMAGE.Fonctions
 
         public static string[] getFiles(string FolderPath, string[] Format, Boolean Favorite, string[] Tags)
         {
-            string[] filesToSearch = Format.SelectMany(f => Directory.GetFiles(FolderPath, f)).ToArray();
+            string[] filesToSearch = getFiles(FolderPath, Format);
             List<string> newListFiles = new List<string>();
 
             foreach (string file in filesToSearch)
@@ -303,7 +312,7 @@ namespace touchIMAGE.Fonctions
 
         public static string[] getFiles(string FolderPath, string[] Format, Boolean Favorite, DateTime Date)
         {
-            string[] filesToSearch = Format.SelectMany(f => Directory.GetFiles(FolderPath, f)).ToArray();
+            string[] filesToSearch = getFiles(FolderPath, Format);
             List<string> newListFiles = new List<string>();
 
             foreach (string file in filesToSearch)
@@ -338,7 +347,7 @@ namespace touchIMAGE.Fonctions
 
         public static string[] getFiles(string FolderPath, string[] Format, Boolean Favorite, DateTime DateStart, DateTime DateEnd)
         {
-            string[] filesToSearch = Format.SelectMany(f => Directory.GetFiles(FolderPath, f)).ToArray();
+            string[] filesToSearch = getFiles(FolderPath, Format);
             List<string> newListFiles = new List<string>();
 
             foreach (string file in filesToSearch)
@@ -373,7 +382,7 @@ namespace touchIMAGE.Fonctions
 
         public static string[] getFiles(string FolderPath, string[] Format, Boolean Favorite, DateTime DateStart, DateTime DateEnd, string[] Tags)
         {
-            string[] filesToSearch = Format.SelectMany(f => Directory.GetFiles(FolderPath, f)).ToArray();
+            string[] filesToSearch = getFiles(FolderPath, Format);
             List<string> newListFiles = new List<string>();
 
             foreach (string file in filesToSearch)
@@ -418,7 +427,7 @@ namespace touchIMAGE.Fonctions
 
         public static string[] getFiles(string FolderPath, string[] Format, Boolean Favorite, DateTime Date, string[] Tags)
         {
-            string[] filesToSearch = Format.SelectMany(f => Directory.GetFiles(FolderPath, f)).ToArray();
+            string[] filesToSearch = getFiles(FolderPath, Format);
             List<string> newListFiles = new List<string>();
 
             foreach (string file in filesToSearch)
@@ -539,6 +548,29 @@ namespace touchIMAGE.Fonctions
             FileInfo info = new FileInfo(FilePath);
 
             return info.Exists;
+        }
+
+
+        /// <summary>
+        /// Check if the file is an image
+        /// </summary>
+        /// <param name=""></param>
+        /// <returns></returns>
+
+
+        public static Boolean IsImageFile(string FileName)
+        {
+            try
+            {
+                System.Drawing.Image imgInput = System.Drawing.Image.FromFile(FileName);
+                System.Drawing.Graphics gInput = System.Drawing.Graphics.FromImage(imgInput);
+                System.Drawing.Imaging.ImageFormat thisFormat = imgInput.RawFormat;
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
     }

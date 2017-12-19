@@ -95,7 +95,7 @@ namespace touchIMAGE.Graphs.Panels.Navigation
 
         private string ItemFiltre(string value)
         {
-            return Regex.Replace(value, "[^a-zA-Z]+", "");
+            return Regex.Replace(value, "[^a-zA-Z1-9]+", "");
         }
 
         private void RefreshViewImages()
