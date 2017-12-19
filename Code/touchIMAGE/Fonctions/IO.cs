@@ -21,7 +21,7 @@ namespace touchIMAGE.Fonctions
 
 
         /// <summary>
-        /// Get the files from the selected directory that match the filter
+        /// Get the files from the selected directory with selected format and is not an hidden file
         /// </summary>
         /// <param name="FolderPath"></param>
         /// <param name="Format"></param>
@@ -560,31 +560,6 @@ namespace touchIMAGE.Fonctions
             FileInfo info = new FileInfo(FilePath);
 
             return info.Exists;
-        }
-
-
-        /// <summary>
-        /// Check if the file is an image
-        /// </summary>
-        /// <param name=""></param>
-        /// <returns></returns>
-
-
-        public static Boolean IsImageFile(string FileName)
-        {
-            try
-            {
-                System.Drawing.Image imgInput = System.Drawing.Image.FromFile(FileName);
-                System.Drawing.Graphics gInput = System.Drawing.Graphics.FromImage(imgInput);
-                imgInput.Dispose();
-                gInput.Dispose();
-                System.Drawing.Imaging.ImageFormat thisFormat = imgInput.RawFormat;
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
         }
 
     }

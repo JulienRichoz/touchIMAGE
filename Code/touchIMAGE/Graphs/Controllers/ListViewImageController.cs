@@ -203,7 +203,8 @@ namespace touchIMAGE.Graphs.Controllers
                 touchIMAGE.Program.MainForm.lst_Images.EndUpdate();// Restart the screen update
                 touchIMAGE.Program.MainForm.lst_Images.Refresh();// Refresh the listview in to the screen
             }
-            Program.MainForm.pnl_header_container.lnk_FilesRename.Enabled = true;
+            if (files.Length != 0)
+                Program.MainForm.pnl_header_container.lnk_FilesRename.Enabled = true;
             return;
         }
     }
