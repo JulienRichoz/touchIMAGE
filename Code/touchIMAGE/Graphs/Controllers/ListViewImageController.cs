@@ -114,9 +114,9 @@ namespace touchIMAGE.Graphs.Controllers
             files = FolderData.Files;         // The list of files
             StopThread();                    // Stop the execution of the thread
             ClearList();                     // Clear the current List  
-            //Preview();                      // Fil the listView with the icon empty image           
+            Preview();                      // Fil the listView with the icon empty image           
             FillListViewBK();      // Fill the ListView with the real images in background 
-            Fill(new object());
+            //Fill(new object());
             return;
         }
 
