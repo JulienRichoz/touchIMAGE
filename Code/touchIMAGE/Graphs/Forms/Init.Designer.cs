@@ -65,6 +65,8 @@
             // 
             // cmd_Init
             // 
+            this.cmd_Init.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.cmd_Init.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmd_Init.Location = new System.Drawing.Point(173, 166);
             this.cmd_Init.Name = "cmd_Init";
             this.cmd_Init.Size = new System.Drawing.Size(140, 35);

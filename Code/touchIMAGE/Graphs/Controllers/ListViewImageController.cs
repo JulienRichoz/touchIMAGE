@@ -110,8 +110,8 @@ namespace touchIMAGE.Graphs.Controllers
 
         public static void Populate(FolderData FolderData)
         {
-            Program.MainForm.pnl_header_container.lnk_FilesRename.Enabled = false;
-            Program.MainForm.pnl_footer_container.trk_ImageSize.Enabled = false;
+            Program.MainForm.pnl_header_container.lnk_FilesRename.Enabled = false; // Disable FileRename in Header
+            Program.MainForm.pnl_footer_container.trk_ImageSize.Enabled = false; // Disable Change Size Image in Footer
             FolderData.GetFiles();
             files = FolderData.Files;         // The list of files
             StopThread();                    // Stop the execution of the thread
@@ -206,8 +206,8 @@ namespace touchIMAGE.Graphs.Controllers
             }
             if (files.Length != 0)
             {
-                Program.MainForm.pnl_header_container.lnk_FilesRename.Enabled = true;
-                Program.MainForm.pnl_footer_container.trk_ImageSize.Enabled = true;
+                Program.MainForm.pnl_header_container.lnk_FilesRename.Enabled = true;  // Enable File Rename function in Header
+                Program.MainForm.pnl_footer_container.trk_ImageSize.Enabled = true; // Enable Image size change in footer
             }
             return;
         }

@@ -109,6 +109,8 @@
             // 
             // cmd_Change
             // 
+            this.cmd_Change.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.cmd_Change.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmd_Change.Location = new System.Drawing.Point(22, 33);
             this.cmd_Change.Name = "cmd_Change";
             this.cmd_Change.Size = new System.Drawing.Size(117, 23);
