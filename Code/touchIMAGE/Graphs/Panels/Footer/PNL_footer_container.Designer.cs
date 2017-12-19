@@ -84,6 +84,7 @@
             // trk_ImageSize
             // 
             this.trk_ImageSize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.trk_ImageSize.Enabled = false;
             this.trk_ImageSize.LargeChange = 50;
             this.trk_ImageSize.Location = new System.Drawing.Point(423, 25);
             this.trk_ImageSize.Maximum = 250;
@@ -140,8 +141,8 @@
         public DCI_Elements.AnimationComponents Animation;
         private System.Windows.Forms.Button cmd_OpenClose;
         private System.Windows.Forms.PictureBox img_line;
-        private System.Windows.Forms.TrackBar trk_ImageSize;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button cmd_Change;
+        public System.Windows.Forms.TrackBar trk_ImageSize;
+        public System.Windows.Forms.Button cmd_Change;
     }
 }

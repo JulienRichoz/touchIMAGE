@@ -111,6 +111,7 @@ namespace touchIMAGE.Graphs.Controllers
         public static void Populate(FolderData FolderData)
         {
             Program.MainForm.pnl_header_container.lnk_FilesRename.Enabled = false;
+            Program.MainForm.pnl_footer_container.trk_ImageSize.Enabled = false;
             FolderData.GetFiles();
             files = FolderData.Files;         // The list of files
             StopThread();                    // Stop the execution of the thread
@@ -125,7 +126,7 @@ namespace touchIMAGE.Graphs.Controllers
         /// Stop the thread if is in running mode
         /// </summary>
 
-        private static void StopThread()
+        public static void StopThread()
         {
             if (th != null)
                 if (th.ThreadState == ThreadState.Running)
@@ -204,7 +205,10 @@ namespace touchIMAGE.Graphs.Controllers
                 touchIMAGE.Program.MainForm.lst_Images.Refresh();// Refresh the listview in to the screen
             }
             if (files.Length != 0)
+            {
                 Program.MainForm.pnl_header_container.lnk_FilesRename.Enabled = true;
+                Program.MainForm.pnl_footer_container.trk_ImageSize.Enabled = true;
+            }
             return;
         }
     }

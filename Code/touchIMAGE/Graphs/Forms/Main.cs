@@ -98,6 +98,7 @@ namespace touchIMAGE
         private void frm_Main_FormClosed(object sender, FormClosedEventArgs e)
         {
             Program.IsExit = true;
+            touchIMAGE.Graphs.Controllers.ListViewImageController.StopThread();
         }
     }
 }

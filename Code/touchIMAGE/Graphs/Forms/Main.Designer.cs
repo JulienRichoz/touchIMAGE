@@ -183,14 +183,13 @@
         }
 
         #endregion
-
-        private Graphs.Panels.Footer.PNL_footer_container pnl_footer_container;
         private System.Windows.Forms.Splitter splitter;
         public System.Windows.Forms.Panel pnl_MainContainer;
         public System.Windows.Forms.ListView lst_Images;
         public Graphs.Panels.Navigation.PNL_navigation_container pnl_navigation_container;
         public Graphs.Panels.Header.PNL_header_container pnl_header_container;
         public Graphs.Panels.Informations.PNL_information_container pnl_information_container;
+        public Graphs.Panels.Footer.PNL_footer_container pnl_footer_container;
     }
 }
 
