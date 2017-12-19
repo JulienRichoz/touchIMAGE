@@ -35,6 +35,7 @@ namespace touchIMAGE.Graphs.Forms
 
                     Settings.Default.RootPath = folderDialog.SelectedPath;
                     Settings.Default.Save();
+                    ProgramData.rootFolder = folderDialog.SelectedPath;
                     IsBreak = true;
                     this.Close();
                 }

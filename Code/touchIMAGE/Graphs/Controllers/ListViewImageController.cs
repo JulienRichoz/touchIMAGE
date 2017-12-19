@@ -110,13 +110,14 @@ namespace touchIMAGE.Graphs.Controllers
 
         public static void Populate(FolderData FolderData)
         {
+            Program.MainForm.pnl_header_container.lnk_FilesRename.Enabled = false;
             FolderData.GetFiles();
             files = FolderData.Files;         // The list of files
             StopThread();                    // Stop the execution of the thread
             ClearList();                     // Clear the current List  
             Preview();                      // Fil the listView with the icon empty image           
-            FillListViewBK();      // Fill the ListView with the real images in background 
-            //Fill(new object());
+            //FillListViewBK();      // Fill the ListView with the real images in background 
+            Fill(new object());
             return;
         }
 
@@ -202,6 +203,7 @@ namespace touchIMAGE.Graphs.Controllers
                 touchIMAGE.Program.MainForm.lst_Images.EndUpdate();// Restart the screen update
                 touchIMAGE.Program.MainForm.lst_Images.Refresh();// Refresh the listview in to the screen
             }
+            Program.MainForm.pnl_header_container.lnk_FilesRename.Enabled = true;
             return;
         }
     }

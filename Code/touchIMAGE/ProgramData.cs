@@ -26,7 +26,7 @@ namespace touchIMAGE
     public class ProgramData
     {
         public static string rootFolder = Settings.Default.RootPath;
-        public static string[] filter_Format = new[] { "*.jpg", "*.png", "*.gif", "*.bmp" };
+        public static string[] filter_Format = new[] { "*.jpg", "*.png", "*.gif", "*.bmp" , "*.tiff" };
         public static string[] filter_Tag = new string[0];
         public static FiltreDate filter_Date = null;
         public static Boolean filter_Favorite = false;

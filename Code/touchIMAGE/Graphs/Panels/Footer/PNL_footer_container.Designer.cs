@@ -33,6 +33,7 @@
             this.img_line = new System.Windows.Forms.PictureBox();
             this.trk_ImageSize = new System.Windows.Forms.TrackBar();
             this.label1 = new System.Windows.Forms.Label();
+            this.cmd_Change = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.img_line)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trk_ImageSize)).BeginInit();
             this.SuspendLayout();
@@ -105,11 +106,22 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Change Image Size";
             // 
+            // cmd_Change
+            // 
+            this.cmd_Change.Location = new System.Drawing.Point(22, 33);
+            this.cmd_Change.Name = "cmd_Change";
+            this.cmd_Change.Size = new System.Drawing.Size(117, 23);
+            this.cmd_Change.TabIndex = 7;
+            this.cmd_Change.Text = "Change Folder";
+            this.cmd_Change.UseVisualStyleBackColor = true;
+            this.cmd_Change.Click += new System.EventHandler(this.cmd_Change_Click);
+            // 
             // PNL_footer_container
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.cmd_Change);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.trk_ImageSize);
             this.Controls.Add(this.cmd_OpenClose);
@@ -130,5 +142,6 @@
         private System.Windows.Forms.PictureBox img_line;
         private System.Windows.Forms.TrackBar trk_ImageSize;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button cmd_Change;
     }
 }

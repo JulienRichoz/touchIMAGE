@@ -57,5 +57,13 @@ namespace touchIMAGE.Graphs.Panels.Footer
             if ( (Width % 25) == 0)
                 touchIMAGE.Graphs.Controllers.NavigationFolderController.RefershImageListAndHeader();
         }
+
+        private void cmd_Change_Click(object sender, EventArgs e)
+        {
+            Program.MainForm.Close();
+
+            Program.ChangeFolder = true;   
+
+        }
     }
 }

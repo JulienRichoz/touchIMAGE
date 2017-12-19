@@ -25,7 +25,7 @@ namespace touchIMAGE {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("c:/")]
         public string RootPath {
             get {
                 return ((string)(this["RootPath"]));

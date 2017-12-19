@@ -38,7 +38,7 @@
             // 
             this.img_line.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.img_line.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.img_line.Location = new System.Drawing.Point(0, 322);
+            this.img_line.Location = new System.Drawing.Point(0, 304);
             this.img_line.Name = "img_line";
             this.img_line.Size = new System.Drawing.Size(283, 1);
             this.img_line.TabIndex = 5;
@@ -49,15 +49,15 @@
             this.pnl_navigation_folder.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_navigation_folder.Location = new System.Drawing.Point(0, 0);
             this.pnl_navigation_folder.Name = "pnl_navigation_folder";
-            this.pnl_navigation_folder.Size = new System.Drawing.Size(283, 322);
+            this.pnl_navigation_folder.Size = new System.Drawing.Size(283, 304);
             this.pnl_navigation_folder.TabIndex = 0;
             // 
             // pnl_navigation_filtre
             // 
             this.pnl_navigation_filtre.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnl_navigation_filtre.Location = new System.Drawing.Point(0, 323);
+            this.pnl_navigation_filtre.Location = new System.Drawing.Point(0, 305);
             this.pnl_navigation_filtre.Name = "pnl_navigation_filtre";
-            this.pnl_navigation_filtre.Size = new System.Drawing.Size(283, 248);
+            this.pnl_navigation_filtre.Size = new System.Drawing.Size(283, 266);
             this.pnl_navigation_filtre.TabIndex = 6;
             // 
             // PNL_navigation_container

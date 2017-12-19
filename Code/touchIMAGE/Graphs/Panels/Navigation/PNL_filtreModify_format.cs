@@ -22,7 +22,7 @@ namespace touchIMAGE.Graphs.Panels.Navigation
 
         private void txt_Value_TextChanged(object sender, EventArgs e)
         {
-            cmd_Add.Enabled = (txt_Value.TextLength != 0 ? true : false);
+            cmd_Add.Enabled = (lst_NotSelected.Items.Count != 0 ? true : false);
         }
 
         private void cmd_Add_Click(object sender, EventArgs e)
@@ -88,16 +88,6 @@ namespace touchIMAGE.Graphs.Panels.Navigation
                 RemoveItems();
         }
 
-        private Boolean ItemVerify(string value)
-        {
-            return lst_Selected.Items.Contains(value) ? true : false;
-        }
-
-        private string ItemFiltre(string value)
-        {
-            return Regex.Replace(value, "[^a-zA-Z1-9]+", "");
-        }
-
         private void RefreshViewImages()
         {
             LoadData();
@@ -105,21 +95,24 @@ namespace touchIMAGE.Graphs.Panels.Navigation
 
         private void AddItems()
         {
-            if (!ItemVerify(ItemFiltre(txt_Value.Text.ToLower()))) // Verify with the regEx
-            {
-                lst_Selected.Items.Add(ItemFiltre(txt_Value.Text).ToLower());
-                RefreshViewImages();
-            }
-            txt_Value.Text = "";
+            lst_Selected.Items.Add(lst_NotSelected.SelectedItem);
+            lst_NotSelected.Items.Remove(lst_NotSelected.SelectedItem);
+            RefreshViewImages();
         }
 
         private void RemoveItems()
         {
+            lst_NotSelected.Items.Add(lst_Selected.SelectedItem);
             lst_Selected.Items.Remove(lst_Selected.SelectedItem);
             //Verify if the list is Empty
-            if (lst_Selected.Items.Count == 0)
-                FillList();
+            //if (lst_Selected.Items.Count == 0)
+              //  FillList();
             RefreshViewImages();
+        }
+
+        private void lst_NotSelected_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmd_Add.Enabled = (lst_NotSelected.Items.Count != 0 ? true : false);
         }
     }
 }

@@ -160,7 +160,16 @@ namespace touchIMAGE.Graphs.Classes.FolderView
         /// 
         private void createPanels()
         {
-            string[] subDir = touchIMAGE.Fonctions.IO.getDirectories(ProgramData.SelectedFolder);
+            string[] subDir = new string[0];
+
+            try
+            {
+                subDir = touchIMAGE.Fonctions.IO.getDirectories(ProgramData.SelectedFolder);
+            }
+            catch
+            {
+                subDir = new string[0];
+            }
 
             if (subDir.Length == 0)
                     return;

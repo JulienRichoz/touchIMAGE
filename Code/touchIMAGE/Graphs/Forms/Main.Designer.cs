@@ -167,6 +167,7 @@
             this.TitleImage = global::touchIMAGE.Properties.Resources.Logo;
             this.TitleImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.TitleText = "toucIMAGE";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frm_Main_FormClosed);
             this.Load += new System.EventHandler(this.frm_Main_Load);
             this.Controls.SetChildIndex(this.pnl_MainContainer, 0);
             this.Controls.SetChildIndex(this.picIcon, 0);

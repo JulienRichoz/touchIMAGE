@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.IO;
+using System.Windows.Forms;
 
 namespace touchIMAGE.Fonctions
 {
@@ -28,16 +29,27 @@ namespace touchIMAGE.Fonctions
 
         public static string[] getFiles(string FolderPath, string[] Format)
         {
-            string[] filesIMages = Format.SelectMany(f => Directory.GetFiles(FolderPath, f)).ToArray();
-            List<string> newListFiles = new List<string>();
-            foreach (string file in filesIMages)
+            string[] filesIMages = new string[0];
+            List<string> files = new List<string>();
+
+            try
             {
-                if (IsImageFile(file))
-                    if (!newListFiles.Contains(file))
-                        newListFiles.Add(file);
+                 filesIMages = Format.SelectMany(f => Directory.GetFiles(FolderPath, f)).ToArray();
+                 foreach (string file in filesIMages)
+                {
+                    if ((File.GetAttributes(file) & FileAttributes.Hidden) != FileAttributes.Hidden)
+                    {
+                        if (!files.Contains(file))
+                            files.Add(file);
+                    }
+                }
+            }
+            catch
+            {
+                return new string[0];
             }
 
-            return newListFiles.ToArray();
+            return files.ToArray();
         }
 
         /// <summary>
@@ -564,6 +576,8 @@ namespace touchIMAGE.Fonctions
             {
                 System.Drawing.Image imgInput = System.Drawing.Image.FromFile(FileName);
                 System.Drawing.Graphics gInput = System.Drawing.Graphics.FromImage(imgInput);
+                imgInput.Dispose();
+                gInput.Dispose();
                 System.Drawing.Imaging.ImageFormat thisFormat = imgInput.RawFormat;
                 return true;
             }

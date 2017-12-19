@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="RootPath" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">c:/</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -56,6 +56,7 @@
             // lnk_FilesRename
             // 
             this.lnk_FilesRename.AutoSize = true;
+            this.lnk_FilesRename.Enabled = false;
             this.lnk_FilesRename.Location = new System.Drawing.Point(9, 74);
             this.lnk_FilesRename.Name = "lnk_FilesRename";
             this.lnk_FilesRename.Size = new System.Drawing.Size(134, 13);
@@ -127,6 +128,6 @@
         public System.Windows.Forms.Label lbl_Description;
         public System.Windows.Forms.Label lbl_FolderName;
         private System.Windows.Forms.PictureBox img_line;
-        private System.Windows.Forms.LinkLabel lnk_FilesRename;
+        public System.Windows.Forms.LinkLabel lnk_FilesRename;
     }
 }

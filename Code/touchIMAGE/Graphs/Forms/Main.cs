@@ -94,5 +94,10 @@ namespace touchIMAGE
             Graphs.Forms.ImageVision VisionWindow = new Graphs.Forms.ImageVision();
             VisionWindow.Show();
         }
+
+        private void frm_Main_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Program.IsExit = true;
+        }
     }
 }

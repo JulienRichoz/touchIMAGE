@@ -12,6 +12,7 @@ namespace touchIMAGE
 
         public static Boolean IsFolder = false;
         public static Boolean IsExit = false;
+        public static Boolean ChangeFolder = false;
 
         /// <summary>
         /// Punto di ingresso principale dell'applicazione.
@@ -25,6 +26,8 @@ namespace touchIMAGE
 
             do
             {
+
+
                 if (touchIMAGE.Settings.Default.RootPath == "")
                 {
                     IsFolder = true;
@@ -33,11 +36,12 @@ namespace touchIMAGE
                 }
                 else
                 {
-                    if (!Fonctions.IO.DirectoryExsiste(touchIMAGE.Settings.Default.RootPath))
+                    if ((!Fonctions.IO.DirectoryExsiste(touchIMAGE.Settings.Default.RootPath)) || (ChangeFolder))
                     {
                         IsFolder = true;
                         touchIMAGE.Settings.Default.RootPath = "";
                         touchIMAGE.Settings.Default.Save();
+                        ChangeFolder = false;
                     }
                     else
                     {
@@ -45,14 +49,19 @@ namespace touchIMAGE
                     }
                 }
 
-            }
-            while (IsFolder);
+                if ( (IsFolder == false) && (!IsExit))
+                {
+                    MainForm = new frm_Main();
+                    Application.Run(MainForm);
+                    if (ChangeFolder)
+                        IsExit = false;
+                }
 
-            if (IsExit == false)
-            {
-                MainForm = new frm_Main();
-                Application.Run(MainForm);
             }
+
+            while (!IsExit);
+
+            
 
         }
     }
