@@ -1,8 +1,12 @@
 # touchIMAGE
 Photo viewer software developed in C#. Format supported: JPG, PNG, BMP, GIF, TIFF.
-
-<img src="/Screenshot/TouchImagePresentation.PNG" height="450px">
-
+<table>
+  <tr>
+    <td>
+      <img src="/Screenshot/TouchImagePresentation.PNG" height="450px" border="1px solid black">
+    </td>
+  </tr>
+</table>
 Main functions:
 + List pictures
 + Read Metadata
