@@ -12,6 +12,7 @@ More information in documentation (french).
 ## Author
 Davide Carboni and Julien Richoz
 ## System requirements
+OS MS Windows 7, 8 and 10
 Framework 4.5.2
 ## Installation
 Download folder Executable and run touchIMAGE.exe
