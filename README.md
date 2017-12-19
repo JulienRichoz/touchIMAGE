@@ -9,7 +9,7 @@ Photo viewer software developed in C#. Format supported: JPG, PNG, BMP, GIF, TIF
 </table>
 
 Main functions:
-+ List pictures
++ Pictures List 
 + Read Metadata
 + Write JPG Metadata
 + Rename automatically JPG files
