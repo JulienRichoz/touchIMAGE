@@ -26,4 +26,4 @@ Framework 4.5.2
 Download folder Executable and run touchIMAGE.exe
 
 ## Visual Studio debugging mode
-If you want run the application in dubug mode you must deactivate the code line 130 and activate the code line 129 in ListViewImageController.cs in the toucheIMAGE code
+If you want to run the application in debug mode you have to desactivate the code line #130 and activate the code line #129 in ListViewImageController.cs in the touchIMAGE code.
